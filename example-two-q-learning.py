@@ -26,8 +26,7 @@ def step(state: int, action: int) -> tuple[int, float, bool]:
         col = min(col + 1, n_cols - 1)
 
     new_state = row * n_cols + col
-    # Change rewards (e.g., add a small −0.01 per step to encourage shorter paths).
-    reward = -0.01 if new_state == goal_state else 0.0
+    reward = 1.0 if new_state == goal_state else -0.01
     done = new_state == goal_state
 
     return new_state, reward, done

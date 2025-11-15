@@ -17,13 +17,14 @@ def pull_arm(arm: int) -> int:
 
 
 # --- Agent: Epsilon-greedy agent ---
-n_steps = 10_000
-epsilon = 0.1  # 10% exploration
+# Change n_steps to a very small number and see how unstable estimates are.
+n_steps = 10000
+
+# Change epsilon to 0.0 (purely greedy). Watch it often lock on a bad arm.
+epsilon = 0.1
 
 q_estimates = np.zeros(n_arms)
-
 counts = np.zeros(n_arms, dtype=int)
-
 rewards_history = []
 
 for t in range(n_steps):

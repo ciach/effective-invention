@@ -194,6 +194,6 @@ def watch_trained():
 
 
 if __name__ == "__main__":
-    train_dqn()
+    # train_dqn()
     # After training, comment out train_dqn() and call:
-    # watch_trained()
+    watch_trained()
